@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Master | Professional Mentor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="simple-bg"></div>
+    <div class="coins-bg" id="coinsBg"></div>
+    
+    <main class="container">
+        <div class="profile-card">
+            <div class="card-glow"></div>
+            <div class="card-shine"></div>
+            
+            <div class="profile-header">
+                <div class="avatar-wrapper">
+                    <div class="avatar">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="status-ring"></div>
+                    <div class="live-badge">LIVE</div>
+                </div>
+                
+                <div class="profile-info">
+                    <h1 class="name">Trading Master</h1>
+                    <div class="role-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>Professional Mentor</span>
+                    </div>
+                    <p class="bio">20+ o'quvchi | 1 yil tajriba | Halol trading darslari</p>
+                </div>
+            </div>
+
+            <div class="trading-stats">
+                <div class="stat-box">
+                    <div class="stat-icon win"><i class="fas fa-users"></i></div>
+                    <div class="stat-data">
+                        <span class="stat-value">20</span>
+                        <span class="stat-desc">O'quvchilar</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon profit"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-data">
+                        <span class="stat-value">1</span>
+                        <span class="stat-desc">Yil tajriba</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon members"><i class="fas fa-thumbs-up"></i></div>
+                    <div class="stat-data">
+                        <span class="stat-value">15</span>
+                        <span class="stat-desc">Foydadan</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="links-section">
+                <div class="section-title">
+                    <span class="line"></span>
+                    <span>Kurs va Aloqa</span>
+                    <span class="line"></span>
+                </div>
+
+                <a href="kurs.html" target="_blank" class="link-card premium">
+                    <div class="link-glow"></div>
+                    <div class="link-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="link-content">
+                        <span class="link-title">Trading Kursi</span>
+                        <span class="link-subtitle">Boshlang'ichdan professionalgacha</span>
+                    </div>
+                    <div class="link-badge">HOT</div>
+                    <i class="fas fa-arrow-up-right link-arrow"></i>
+                </a>
+
+                <a href="https://t.me/+bGRc6_InSJUzMzk6" target="_blank" class="link-card telegram">
+                    <div class="link-glow"></div>
+                    <div class="link-icon"><i class="fab fa-telegram-plane"></i></div>
+                    <div class="link-content">
+                        <span class="link-title">VIP Telegram Kanal</span>
+                        <span class="link-subtitle">Signal va tahlillar</span>
+                    </div>
+                    <div class="link-badge">VIP</div>
+                    <i class="fas fa-arrow-up-right link-arrow"></i>
+                </a>
+
+                <a href="#" class="link-card course">
+                    <div class="link-glow"></div>
+                    <div class="link-icon"><i class="fas fa-users"></i></div>
+                    <div class="link-content">
+                        <span class="link-title">Yopiq Guruh</span>
+                        <span class="link-subtitle">20+ o'quvchi jamoasi</span>
+                    </div>
+                    <div class="link-badge">NEW</div>
+                    <i class="fas fa-arrow-up-right link-arrow"></i>
+                </a>
+
+                <div class="expand-section">
+                    <button class="expand-btn" id="expandBtn">
+                        <i class="fas fa-chevron-down"></i>
+                        <span>Boshqa aloqalar</span>
+                    </button>
+                    
+                    <div class="expandable-links" id="expandableLinks">
+                        <a href="#" class="link-card youtube">
+                            <div class="link-glow"></div>
+                            <div class="link-icon"><i class="fab fa-youtube"></i></div>
+                            <div class="link-content">
+                                <span class="link-title">YouTube</span>
+                                <span class="link-subtitle">Video lavhalar</span>
+                            </div>
+                            <i class="fas fa-arrow-up-right link-arrow"></i>
+                        </a>
+
+                        <a href="#" class="link-card instagram">
+                            <div class="link-glow"></div>
+                            <div class="link-icon"><i class="fab fa-instagram"></i></div>
+                            <div class="link-content">
+                                <span class="link-title">Instagram</span>
+                                <span class="link-subtitle">Kunlik yangiliklar</span>
+                            </div>
+                            <i class="fas fa-arrow-up-right link-arrow"></i>
+                        </a>
+
+                        <a href="https://wa.me/+998502001512" target="_blank" class="link-card whatsapp">
+                            <div class="link-glow"></div>
+                            <div class="link-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="link-content">
+                                <span class="link-title">WhatsApp</span>
+                                <span class="link-subtitle">+998 50 200 15 12</span>
+                            </div>
+                            <i class="fas fa-arrow-up-right link-arrow"></i>
+                        </a>
+
+                        <a href="#" class="link-card discord">
+                            <div class="link-glow"></div>
+                            <div class="link-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="link-content">
+                                <span class="link-title">Email</span>
+                                <span class="link-subtitle">Rasmiy xatlar</span>
+                            </div>
+                            <i class="fas fa-arrow-up-right link-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-badges">
+                <div class="trust-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>Sifat Kafolati</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-infinity"></i>
+                    <span>Darslarga Doimiy Kirish</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <span>Yordam 24/7</span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Professional trading darslari. <span class="gradient-text">20+ o'quvchi ishonchi.</span></p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Kursiga Yozilish | Trading Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .registration-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0d0a0c 0%, #1a1518 50%, #0d0a0c 100%);
+        }
+
+        .registration-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(20px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 100px rgba(0, 0, 0, 0.3);
+        }
+
+        .registration-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .registration-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .registration-header p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            font-size: 15px;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00c853;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 20px rgba(0, 200, 83, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #00c853, #00a040);
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #00c853;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .success-message i {
+            font-size: 60px;
+            color: #00c853;
+            margin-bottom: 20px;
+        }
+
+        .success-message h2 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .success-message p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .course-info {
+            background: rgba(0, 200, 83, 0.1);
+            border: 1px solid rgba(0, 200, 83, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .course-info h3 {
+            font-size: 16px;
+            color: #00c853;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .course-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .course-info li {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .course-info li i {
+            color: #00c853;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .registration-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <div class="registration-card">
+            <div id="formSection">
+                <div class="registration-header">
+                    <h1><i class="fas fa-graduation-cap" style="color: #00c853; margin-right: 10px;"></i>Trading Kursi</h1>
+                    <p>Kursga yozilish uchun ariza qoldiring</p>
+                </div>
+
+                <div class="course-info">
+                    <h3><i class="fas fa-star"></i>Kurs haqida</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Boshlang'ichdan professionalgacha</li>
+                        <li><i class="fas fa-check"></i> 20+ o'quvchi jamoasi</li>
+                        <li><i class="fas fa-check"></i> 1 yillik tajriba</li>
+                        <li><i class="fas fa-check"></i> 15 ta muvaffaqiyatli foyda</li>
+                    </ul>
+                </div>
+
+                <form id="registrationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Ism</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Ismingiz" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Familya</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Familyangiz" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Yosh</label>
+                        <input type="number" id="age" name="age" placeholder="Masalan: 25" min="16" max="80" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon raqam</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+998 __ ___ __ __" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telegram">Telegram username</label>
+                        <input type="text" id="telegram" name="telegram" placeholder="@username" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Ariza yuborish
+                    </button>
+                </form>
+
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left" style="margin-right: 5px;"></i> Orqaga qaytish
+                </a>
+            </div>
+
+            <div id="successSection" class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h2>Ariza qabul qilindi!</h2>
+                <p>Siz bilan tez orada bog'lanamiz.<br>Telegram orqali bog'lanish mumkin.</p>
+                <a href="index.html" class="back-link" style="margin-top: 30px;">
+                    <i class="fas fa-home" style="margin-right: 5px;"></i> Bosh sahifaga qaytish
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Telegram Bot sozlamalari
+        // SOZLASH UCHUN:
+        // 1. @BotFather ga kiring va /start yozing
+        // 2. /newbot buyrug'i bilan yangi bot yarating
+        // 3. Bot token ni oling (masalan: 123456789:ABCdefGHIjklMNOpqrSTUvwxyz)
+        // 4. @userinfobot ga kiring va o'zingizning Chat ID ni oling
+        // 5. Quyidagi o'zgaruvchilarni to'ldiring:
+        
+        const BOT_TOKEN = '8546153520:AAEqLW3zvvtiz_5-Ajm_ATVUN_GSbdenxH4'; // BotFather dan olingan token
+        const CHAT_ID = '7050310480';       // @userinfobot dan olingan ID
+
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Tekshirish - sozlanganmi?
+            if (BOT_TOKEN === 'YOUR_BOT_TOKEN' || CHAT_ID === 'YOUR_CHAT_ID') {
+                alert('Telegram bot sozlanmagan! Iltimos, kodga BOT_TOKEN va CHAT_ID kiriting.');
+                return;
+            }
+            
+            // Yuborish tugmasini o'chirish
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yuborilmoqda...';
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const telegram = document.getElementById('telegram').value;
+            const date = new Date().toLocaleString('uz-UZ');
+            
+            // Telefon raqamini formatlash
+            const phoneClean = phone.replace(/\s/g, '');
+            const phoneDisplay = phoneClean.replace(/(\+998)(\d{2})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
+            
+            // Xabar matni - yaxshilangan dizayn
+            const message = `
+<b>🎯 YANGI ARIZA</b>
+
+┌ <b>O'quvchi ma'lumotlari</b>
+├ 👤 <b>${firstName} ${lastName}</b>
+├ 🎂 ${age} yosh
+├ 📞 <code>${phoneDisplay}</code>
+└ 💬 ${telegram}
+
+⏰ ${date}
+
+<i>⚡ Tezda bog'laning!</i>
+
+#ariza #trading_kurs #${firstName.toLowerCase()}
+            `;
+            
+            // Inline tugmalar - yaxshilangan
+            const tgUsername = telegram.replace('@', '');
+            const inlineKeyboard = {
+                inline_keyboard: [
+                    [
+                        { text: '📱 Telegram Profil', url: `https://t.me/${tgUsername}` },
+                        { text: '💬 WhatsApp', url: `https://wa.me/${phoneClean.replace('+', '')}` }
+                    ],
+                    [
+                        { text: '✍️ Xabar yozish', url: `https://t.me/${tgUsername}` },
+                        { text: '📊 Kurs haqida', url: `https://t.me/${tgUsername}` }
+                    ],
+                    [
+                        { text: '✅ Qabul qildim - Guruhga qo\'shish', url: 'https://t.me/+B5sKTe8VQjJiODMy' }
+                    ]
+                ]
+            };
+            
+            // Telegram API orqali yuborish
+            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: message,
+                    parse_mode: 'HTML',
+                    reply_markup: inlineKeyboard
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    console.log('SUCCESS!', data);
+                    // Formni yashirish va muvaffaqiyat xabarini ko'rsatish
+                    document.getElementById('formSection').style.display = 'none';
+                    document.getElementById('successSection').style.display = 'block';
+                } else {
+                    throw new Error(data.description);
+                }
+            })
+            .catch(error => {
+                console.log('FAILED...', error);
+                alert('Xatolik yuz berdi: ' + error.message);
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Ariza yuborish';
+            });
+        });
+
+        // Telefon raqam formatini avtomatik to'ldirish
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.startsWith('998')) {
+                    value = '+' + value;
+                } else if (!value.startsWith('+998')) {
+                    value = '+998' + value;
+                }
+            }
+            e.target.value = value;
+        });
+
+        // Telegram username ga @ qo'shish
+        document.getElementById('telegram').addEventListener('blur', function(e) {
+            let value = e.target.value.trim();
+            if (value && !value.startsWith('@')) {
+                e.target.value = '@' + value;
+            }
+        });
+    </script>
+</body>
+</html>
